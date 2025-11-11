@@ -197,15 +197,40 @@
     <div class="container">
       <h3 class="section-title" style="color:#fff">График Работы</h3>
       <div class="list" style="margin-top:18px">
-      <p>ПН 10:00-22:00</p>
-      <p>ВТ 10:00-22:00</p>
-      <p>СР 10:00-22:00</p>
-      <p>ЧТ 10:00-22:00</p>
-      <p>СБ 10:00-22:00</p>
-      <p>ВС Выходной</p>
-      </div>
-    </div>
-  </section>
+<table class="schedule">
+  <tr><td>ПН</td><td>10:00 - 22:00</td></tr>
+  <tr><td>ВТ</td><td>10:00 - 22:00</td></tr>
+  <tr><td>СР</td><td>10:00 - 22:00</td></tr>
+  <tr><td>ЧТ</td><td>10:00 - 22:00</td></tr>
+  <tr><td>ПТ</td><td>10:00 - 22:00</td></tr>
+  <tr><td>СБ</td><td>10:00 - 22:00</td></tr>
+  <tr><td>ВС</td><td>Выходной</td></tr>
+</table>
+
+<style>
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .schedule {
+    border-collapse: collapse;
+    width: 260px;
+    font-family: Arial, sans-serif;
+  }
+  .schedule td {
+    border: 1px solid #e0e0e0;
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+  .schedule tr:nth-child(even) {
+    background: #fafafa;
+  }
+  .schedule tr:last-child td:last-child {
+    color: #d00;
+    font-weight: 600;
+  }
+</style>
 
   <section id="contacts" class="contact">
     <div class="container">
