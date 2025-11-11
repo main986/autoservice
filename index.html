@@ -1,227 +1,240 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Автосервис 999 — Курск</title>
-  <meta name="description" content="Автосервис 999 — профессиональный ремонт и обслуживание автомобилей в Курске. Диагностика, кузовной ремонт, замена масла, электрика. Адрес: ул. Кликова, 20Б." />
-  <meta name="keywords" content="автосервис Курск, ремонт авто Курск, кузовной ремонт, автосервис 999, замена масла, диагностика" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Craftum — Техническое обслуживание автомобилей (клон)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(120deg, #1f1f1f, #2b2b2b);
-      color: white;
-    }
-    header {
-      background: #111;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-    }
-    header h1 {
-      color: #f7c531;
-      font-size: 22px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      color: #f7c531;
-    }
+    :root{--accent:#f5c84a;--bg:#3a3338;--muted:#666}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;color:#222}
+    a{color:inherit}
 
-    .hero {
-      text-align: center;
-      padding: 100px 20px 60px;
-      animation: fadeIn 1.5s ease;
-    }
-    .hero h2 {
-      font-size: 36px;
-      margin-bottom: 15px;
-    }
-    .hero p {
-      font-size: 18px;
-      color: #ccc;
-      margin-bottom: 25px;
-    }
+    /* Header */
+    .topbar{background:#2b2729;color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand h1{font-size:20px;margin:0;font-weight:700}
+    .nav{display:flex;gap:18px;align-items:center}
+    .nav a{color:#ddd;text-decoration:none;font-size:14px}
 
-    .btn {
-      display: inline-block;
-      background: #f7c531;
-      color: #111;
-      padding: 12px 25px;
-      border-radius: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s;
-      margin: 5px;
-    }
-    .btn:hover {
-      background: #ffd84d;
-      transform: scale(1.08);
-      box-shadow: 0 0 10px #f7c531;
-    }
+    /* Hero */
+    .hero{position:relative;background:#000 url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80') center/cover;height:520px;display:flex;align-items:center;justify-content:center}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.7))}
+    .hero-inner{position:relative;z-index:2;text-align:center;color:#fff;padding:0 20px}
+    .hero h2{font-size:40px;line-height:1.05;margin:0 0 12px;font-weight:800}
+    .hero p{max-width:760px;margin:0 auto 20px;color:#e8e8e8}
+    .btn{display:inline-block;padding:12px 18px;border-radius:6px;text-decoration:none;font-weight:600}
+    .btn--primary{background:var(--accent);color:#222;margin-right:10px}
+    .btn--ghost{background:rgba(255,255,255,0.12);color:#fff}
 
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .card {
-      background: #222;
-      border-radius: 15px;
-      padding: 25px;
-      transition: 0.4s;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      background: #2e2e2e;
-    }
-    .card h3 {
-      color: #f7c531;
-      margin-bottom: 10px;
-    }
+    /* Features strip */
+    .features{background:var(--bg);padding:28px 16px;display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
+    .feature{width:200px;text-align:center;color:#fff}
+    .feature .icon{width:56px;height:56px;border-radius:50%;background:#fff1;padding:8px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center}
+    .feature p{margin:6px 0 0;font-weight:600;font-size:15px}
+    .feature small{display:block;color:#bfb3b6;margin-top:6px;font-weight:400}
 
-    .calc-box {
-      background: #222;
-      padding: 20px;
-      border-radius: 15px;
-      max-width: 400px;
-      margin: 20px auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-    select, button {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-    }
-    button {
-      background: #f7c531;
-      color: #111;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    button:hover {
-      background: #ffd84d;
-      transform: scale(1.05);
-    }
-    .price {
-      font-size: 20px;
-      color: #f7c531;
-      font-weight: bold;
-    }
+    /* 3D tour image */
+    .tour{position:relative;height:380px;overflow:hidden}
+    .tour img{width:100%;height:100%;object-fit:cover}
+    .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,0.95);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .tour-caption{position:absolute;left:24px;bottom:24px;color:#fff;font-weight:700;font-size:22px}
 
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 15px;
-      margin-top: 20px;
-    }
+    /* Services */
+    .section{padding:48px 16px}
+    .container{max-width:1100px;margin:0 auto}
+    h3.section-title{font-size:28px;margin:0 0 18px}
+    .services{display:grid;grid-template-columns:1fr 1fr;gap:14px;color:#444}
+    .services ul{margin:0;padding-left:18px}
 
-    footer {
-      background: #111;
-      padding: 15px;
-      text-align: center;
-      color: #888;
-      font-size: 14px;
-    }
+    /* Pricing */
+    .pricing{background:var(--bg);color:#fff;padding:48px 16px}
+    .price-list{max-width:760px;margin:0 auto}
+    .price-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .price-row b{color:var(--accent)}
 
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+    /* Reviews */
+    .reviews{padding:40px 16px}
+    .cards{display:flex;gap:18px;flex-wrap:wrap}
+    .card{background:#fff;border-radius:10px;padding:20px;box-shadow:0 8px 20px rgba(16,16,16,0.06);flex:1;min-width:260px}
+    .card p{margin:0 0 12px}
+    .card small{color:#777}
+
+    /* Certificates */
+    .certs{background:var(--bg);padding:36px 16px;color:#fff}
+    .certs .list{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+    .certs img{width:200px;height:260px;object-fit:cover;border-radius:6px}
+
+    /* Contact form */
+    .contact{padding:42px 16px;background:#fff}
+    .contact .form{max-width:920px;margin:0 auto;display:flex;gap:12px;flex-wrap:wrap}
+    .field{flex:1;min-width:160px}
+    input,button{padding:12px;border-radius:6px;border:1px solid #ddd;font-size:14px}
+    button{background:var(--accent);border:none;font-weight:700}
+
+    /* Footer */
+    footer{background:#1f1b1d;color:#fff;padding:32px 16px}
+    .footer-grid{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
+
+    @media (max-width:900px){
+      .hero{height:460px}
+      .hero h2{font-size:32px}
+      .services{grid-template-columns:1fr}
+      .cards{flex-direction:column}
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Автосервис 999</h1>
-    <nav>
-      <a href="#home">Главная</a>
-      <a href="#services">Услуги</a>
-      <a href="#calc">Калькулятор</a>
-      <a href="#contact">Контакты</a>
-    </nav>
+    <div class="topbar container">
+      <div class="brand"><div style="width:36px;height:36px;border-radius:8px;background:var(--accent)"></div><h1>Craftum</h1></div>
+      <nav class="nav">
+        <a href="#services">Услуги</a>
+        <a href="#prices">Цены</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+        <a href="#" class="btn btn--ghost">Связаться</a>
+      </nav>
+    </div>
   </header>
 
-  <section id="home" class="hero">
-    <h2>Профессиональный автосервис в Курске</h2>
-    <p>Ремонт, обслуживание и диагностика автомобилей на ул. Кликова, 20Б</p>
-    <a href="#services" class="btn">Наши услуги</a>
-    <a href="#contact" class="btn">Контакты</a>
-  </section>
-
-  <section id="services">
-    <h2>Наши услуги</h2>
-    <div class="services">
-      <div class="card"><h3>Диагностика</h3><p>Проверка двигателя, ходовой и электроники</p></div>
-      <div class="card"><h3>Ремонт двигателя</h3><p>Замена ГРМ, прокладок, капитальный ремонт</p></div>
-      <div class="card"><h3>ТО</h3><p>Замена масел, фильтров, тормозных колодок</p></div>
-      <div class="card"><h3>Кузовной ремонт</h3><p>Покраска, удаление вмятин, антикор</p></div>
-      <div class="card"><h3>Доп. услуги</h3><p>Установка сигнализации, шиномонтаж</p></div>
+  <section class="hero">
+    <div class="hero-inner">
+      <h2>Техническое<br/>обслуживание<br/>автомобилей</h2>
+      <p>Проверим работоспособность всех технических узлов и агрегатов вашего автомобиля.</p>
+      <div>
+        <a class="btn btn--primary" href="#contacts">Связаться с нами</a>
+        <a class="btn btn--ghost" href="#portfolio">Посмотреть портфолио</a>
+      </div>
     </div>
   </section>
 
-  <section id="calc">
-    <h2>Калькулятор стоимости</h2>
-    <div class="calc-box">
-      <select id="service">
-        <option value="0">Выберите услугу</option>
-        <option value="1500">Замена масла</option>
-        <option value="2000">Покраска детали</option>
-        <option value="2500">Ремонт подвески</option>
-        <option value="1000">Диагностика двигателя</option>
-      </select>
-      <button onclick="calcPrice()">Рассчитать стоимость</button>
-      <p id="result" class="price"></p>
+  <section class="features">
+    <div class="feature">
+      <div class="icon">🏆</div>
+      <p>Гарантия<br/><small>2 года</small></p>
+    </div>
+    <div class="feature">
+      <div class="icon">💳</div>
+      <p>Фиксированная<br/><small>цена</small></p>
+    </div>
+    <div class="feature">
+      <div class="icon">⏱️</div>
+      <p>Закончим точно<br/><small>в срок</small></p>
+    </div>
+    <div class="feature">
+      <div class="icon">🔍</div>
+      <p>Детальная<br/><small>диагностика</small></p>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Контакты</h2>
-    <p>📍 г. Курск, ул. Кликова, 20Б</p>
-    <p>📞 +7 (999) 123-45-67</p>
-    <p>🕐 Ежедневно с 9:00 до 20:00</p>
-    <iframe src="https://www.google.com/maps?q=Курск,+ул.+Кликова,+20Б&output=embed"></iframe>
+  <section class="tour">
+    <img src="https://images.unsplash.com/photo-1583267745921-0b6f21d5e8a2?auto=format&fit=crop&w=1400&q=80" alt="3d tour">
+    <div class="play">▶</div>
+    <div class="tour-caption">3D-тур по автосервису</div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <h3 class="section-title">Услуги</h3>
+      <div class="services">
+        <ul>
+          <li>Диагностика автомобиля</li>
+          <li>Замена бензонасоса</li>
+          <li>Замена жидкости ГУР</li>
+          <li>Замена лампочек в фаре</li>
+          <li>Замена масла в коробке передач</li>
+          <li>Замена охлаждающей жидкости</li>
+          <li>Замена свечей зажигания</li>
+          <li>Замена тормозной жидкости</li>
+        </ul>
+        <ul>
+          <li>Обслуживание автокондиционеров</li>
+          <li>Обслуживание топливной системы</li>
+          <li>Промывка форсунок</li>
+          <li>Регламентное техническое обслуживание</li>
+          <li>Регулировка фар</li>
+          <li>Ремонт топливной системы</li>
+          <li>Техническое обслуживание автомобиля</li>
+          <li>Экспресс-замена масла</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="prices" class="pricing">
+    <div class="container price-list">
+      <h3 class="section-title" style="color:#fff">Цены на техническое обслуживание</h3>
+      <p style="color:#d6cfcf">Консультации входят в стоимость.</p>
+      <div class="price-row"><span>Письменная консультация юриста</span><b>от 2000 ₽</b></div>
+      <div class="price-row"><span>Консультация по налогообложению</span><b>от 1500 ₽</b></div>
+      <div class="price-row"><span>3 НДФЛ</span><b>от 2000 ₽</b></div>
+      <div class="price-row"><span>Кассационные, апелляционные жалобы</span><b>от 3000 ₽</b></div>
+      <div class="price-row"><span>Жалобы, претензии, заявления</span><b>от 5000 ₽</b></div>
+      <div class="price-row"><span>Исковые заявления</span><b>от 7000 ₽</b></div>
+    </div>
+  </section>
+
+  <section id="reviews" class="reviews">
+    <div class="container">
+      <h3 class="section-title">Отзывы</h3>
+      <div class="cards">
+        <div class="card">
+          <p>Понравилось отношение и цена. Обговорили сроки. В результате детали, как новые, ход двери отличный.</p>
+          <small>Михаил Клинин — г. Москва</small>
+        </div>
+        <div class="card">
+          <p>Я остался очень доволен, услугу оказали очень быстро и качественно, у меня вообще нет никаких претензий.</p>
+          <small>Александр Зубков — г. Москва</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="certs">
+    <div class="container">
+      <h3 class="section-title" style="color:#fff">Наши сертификаты</h3>
+      <div class="list" style="margin-top:18px">
+        <img src="https://via.placeholder.com/200x260?text=Сертификат+1" alt="cert1">
+        <img src="https://via.placeholder.com/200x260?text=Сертификат+2" alt="cert2">
+        <img src="https://via.placeholder.com/200x260?text=Сертификат+3" alt="cert3">
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" class="contact">
+    <div class="container">
+      <h3 class="section-title">Бесплатная консультация</h3>
+      <p style="color:#666;max-width:760px">Заполните форму ниже, если вам нужна консультация нашего специалиста по ТО.</p>
+      <form class="form" onsubmit="event.preventDefault();alert('Заявка отправлена — пример');">
+        <input class="field" placeholder="Ваше имя" required>
+        <input class="field" placeholder="Телефон" required>
+        <input class="field" placeholder="E-mail">
+        <button style="min-width:160px">Оставить заявку</button>
+      </form>
+    </div>
   </section>
 
   <footer>
-    © 2025 Автосервис 999. Все права защищены.
+    <div class="container footer-grid">
+      <div>
+        <h4 style="margin:0 0 8px">Контакты</h4>
+        <p style="margin:0">+7 987 654-32-10<br>info@constructum.ru<br>Москва, метро "Китай-город"</p>
+      </div>
+      <div style="flex:1">
+        <h4 style="margin:0 0 8px">Карта</h4>
+        <div style="background:#fff;border-radius:8px;height:160px;overflow:hidden;"> <!-- placeholder map -->
+          <img src="https://via.placeholder.com/640x160?text=Map" style="width:100%;height:100%;object-fit:cover">
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    function calcPrice() {
-      const select = document.getElementById("service");
-      const result = document.getElementById("result");
-      const price = parseInt(select.value);
-      if (price > 0) {
-        result.innerHTML = `Примерная стоимость: ${price} ₽<br><small>Точная сумма зависит от состояния автомобиля</small>`;
-      } else {
-        result.innerHTML = "Выберите услугу из списка.";
-      }
-    }
-  </script>
 </body>
 </html>
+
+
+Готово — сделал HTML-файл-клон. Открой документ Craftum-clone в левой панели (там уже виден код и превью).
+Если нужно: адаптирую шрифты, заменю картинки на ваши, добавлю анимации, сделаю форму рабочей или экспортирую в ZIP/сборку — скажи, что править, и я внесу изменения.
