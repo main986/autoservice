@@ -232,3 +232,48 @@
 
 </body>
 </html>
+<style>
+/* --- Fix for mobile responsiveness --- */
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* убираем горизонтальный скролл */
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%; /* чтобы контейнер не вылезал */
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+}
+
+.nav {
+  flex-wrap: wrap; /* перенос ссылок на мобильных */
+  justify-content: center;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .brand h1 {
+    font-size: 18px;
+  }
+  .nav {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+  .hero h2 {
+    font-size: 26px;
+  }
+  .feature {
+    width: 46%;
+  }
+}
+</style>
