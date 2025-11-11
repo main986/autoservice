@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> автосервис 999 — Техническое обслуживание автомобилей (клон)</title>
+  <title>Автосервис 999 — Техническое обслуживание автомобилей</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{--accent:#f5c84a;--bg:#3a3338;--muted:#666}
     *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;color:#222}
-    a{color:inherit}
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;color:#222;background:#fff}
+    a{color:inherit;text-decoration:none}
 
     /* Header */
     .topbar{background:#2b2729;color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
@@ -17,6 +17,9 @@
     .brand h1{font-size:20px;margin:0;font-weight:700}
     .nav{display:flex;gap:18px;align-items:center}
     .nav a{color:#ddd;text-decoration:none;font-size:14px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:6px;text-decoration:none;font-weight:600}
+    .btn--primary{background:var(--accent);color:#222;margin-right:10px}
+    .btn--ghost{background:rgba(255,255,255,0.12);color:#fff}
 
     /* Hero */
     .hero{position:relative;background:#000 url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80') center/cover;height:520px;display:flex;align-items:center;justify-content:center}
@@ -24,9 +27,6 @@
     .hero-inner{position:relative;z-index:2;text-align:center;color:#fff;padding:0 20px}
     .hero h2{font-size:40px;line-height:1.05;margin:0 0 12px;font-weight:800}
     .hero p{max-width:760px;margin:0 auto 20px;color:#e8e8e8}
-    .btn{display:inline-block;padding:12px 18px;border-radius:6px;text-decoration:none;font-weight:600}
-    .btn--primary{background:var(--accent);color:#222;margin-right:10px}
-    .btn--ghost{background:rgba(255,255,255,0.12);color:#fff}
 
     /* Features strip */
     .features{background:var(--bg);padding:28px 16px;display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
@@ -35,16 +35,18 @@
     .feature p{margin:6px 0 0;font-weight:600;font-size:15px}
     .feature small{display:block;color:#bfb3b6;margin-top:6px;font-weight:400}
 
-    /* 3D tour image */
+    /* 3D tour */
     .tour{position:relative;height:380px;overflow:hidden}
     .tour img{width:100%;height:100%;object-fit:cover}
     .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,0.95);display:flex;align-items:center;justify-content:center;font-weight:700}
     .tour-caption{position:absolute;left:24px;bottom:24px;color:#fff;font-weight:700;font-size:22px}
 
-    /* Services */
+    /* Sections */
     .section{padding:48px 16px}
     .container{max-width:1100px;margin:0 auto}
     h3.section-title{font-size:28px;margin:0 0 18px}
+
+    /* Services */
     .services{display:grid;grid-template-columns:1fr 1fr;gap:14px;color:#444}
     .services ul{margin:0;padding-left:18px}
 
@@ -61,17 +63,21 @@
     .card p{margin:0 0 12px}
     .card small{color:#777}
 
-    /* Certificates */
-    .certs{background:var(--bg);padding:36px 16px;color:#fff}
-    .certs .list{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
-    .certs img{width:200px;height:260px;object-fit:cover;border-radius:6px}
+    /* Schedule */
+    .certs{background:var(--bg);padding:36px 16px;color:#fff;text-align:center}
+    .schedule-block{display:flex;flex-direction:column;align-items:center}
+    .schedule-icon{font-size:30px;margin-bottom:10px}
+    .schedule{border-collapse:collapse;width:260px;font-family:Arial,sans-serif;background:#fff;color:#000;border-radius:6px;overflow:hidden}
+    .schedule td{border:1px solid #e0e0e0;padding:10px 16px;font-size:16px}
+    .schedule tr:nth-child(even){background:#fafafa}
+    .schedule tr:last-child td:last-child{color:#d00;font-weight:600}
 
     /* Contact form */
     .contact{padding:42px 16px;background:#fff}
     .contact .form{max-width:920px;margin:0 auto;display:flex;gap:12px;flex-wrap:wrap}
     .field{flex:1;min-width:160px}
     input,button{padding:12px;border-radius:6px;border:1px solid #ddd;font-size:14px}
-    button{background:var(--accent);border:none;font-weight:700}
+    button{background:var(--accent);border:none;font-weight:700;cursor:pointer}
 
     /* Footer */
     footer{background:#1f1b1d;color:#fff;padding:32px 16px}
@@ -89,7 +95,7 @@
 
   <header>
     <div class="topbar container">
-      <div class="brand"><div style="width:36px;height:36px;border-radius:8px;background:var(--accent)"></div><h1>Craftum</h1></div>
+      <div class="brand"><div style="width:36px;height:36px;border-radius:8px;background:var(--accent)"></div><h1>Автосервис 999</h1></div>
       <nav class="nav">
         <a href="#services">Услуги</a>
         <a href="#prices">Цены</a>
@@ -102,7 +108,7 @@
 
   <section class="hero">
     <div class="hero-inner">
-      <h2>Техническое<br/>обслуживание<br/>автомобилей</h2>
+      <h2>Техническое<br>обслуживание<br>автомобилей</h2>
       <p>Проверим работоспособность всех технических узлов и агрегатов вашего автомобиля.</p>
       <div>
         <a class="btn btn--primary" href="#contacts">Связаться с нами</a>
@@ -112,22 +118,10 @@
   </section>
 
   <section class="features">
-    <div class="feature">
-      <div class="icon">🏆</div>
-      <p>Гарантия<br/><small>2 года</small></p>
-    </div>
-    <div class="feature">
-      <div class="icon">💳</div>
-      <p>Фиксированная<br/><small>цена</small></p>
-    </div>
-    <div class="feature">
-      <div class="icon">⏱️</div>
-      <p>Закончим точно<br/><small>в срок</small></p>
-    </div>
-    <div class="feature">
-      <div class="icon">🔍</div>
-      <p>Детальная<br/><small>диагностика</small></p>
-    </div>
+    <div class="feature"><div class="icon">🏆</div><p>Гарантия<br><small>2 года</small></p></div>
+    <div class="feature"><div class="icon">💳</div><p>Фиксированная<br><small>цена</small></p></div>
+    <div class="feature"><div class="icon">⏱️</div><p>Закончим точно<br><small>в срок</small></p></div>
+    <div class="feature"><div class="icon">🔍</div><p>Детальная<br><small>диагностика</small></p></div>
   </section>
 
   <section class="tour">
@@ -151,9 +145,9 @@
           <li>Замена тормозной жидкости</li>
         </ul>
         <ul>
-          <li>полировка кузова</li>
-          <li>сварка по кузову</li>
-          <li>малярка по кузову</li>
+          <li>Полировка кузова</li>
+          <li>Сварка по кузову</li>
+          <li>Малярка по кузову</li>
           <li>Регламентное техническое обслуживание</li>
           <li>Регулировка фар</li>
           <li>Ремонт топливной системы</li>
@@ -168,12 +162,11 @@
     <div class="container price-list">
       <h3 class="section-title" style="color:#fff">Цены на техническое обслуживание</h3>
       <p style="color:#d6cfcf">Консультации входят в стоимость.</p>
-      <div class="price-row"><span>Письменная консультация юриста</span><b>от 2000 ₽</b></div>
-      <div class="price-row"><span>Консультация по налогообложению</span><b>от 1500 ₽</b></div>
-      <div class="price-row"><span>3 НДФЛ</span><b>от 2000 ₽</b></div>
-      <div class="price-row"><span>Кассационные, апелляционные жалобы</span><b>от 3000 ₽</b></div>
-      <div class="price-row"><span>Жалобы, претензии, заявления</span><b>от 5000 ₽</b></div>
-      <div class="price-row"><span>Исковые заявления</span><b>от 7000 ₽</b></div>
+      <div class="price-row"><span>Диагностика двигателя</span><b>от 1500 ₽</b></div>
+      <div class="price-row"><span>Замена масла</span><b>от 1000 ₽</b></div>
+      <div class="price-row"><span>Ремонт подвески</span><b>от 2500 ₽</b></div>
+      <div class="price-row"><span>Покраска детали</span><b>от 4000 ₽</b></div>
+      <div class="price-row"><span>Полная диагностика авто</span><b>от 3500 ₽</b></div>
     </div>
   </section>
 
@@ -182,11 +175,11 @@
       <h3 class="section-title">Отзывы</h3>
       <div class="cards">
         <div class="card">
-          <p>Понравилось отношение и цена. Обговорили сроки. В результате детали, как новые, ход двери отличный.</p>
+          <p>Понравилось отношение и цена. В результате детали как новые, дверь работает отлично.</p>
           <small>Михаил Клинин — г. Курск</small>
         </div>
         <div class="card">
-          <p>Я остался очень доволен, услугу оказали очень быстро и качественно, у меня вообще нет никаких претензий.</p>
+          <p>Быстро и качественно. Очень доволен обслуживанием, обязательно приеду снова!</p>
           <small>Александр Зубков — г. Курск</small>
         </div>
       </div>
@@ -194,48 +187,25 @@
   </section>
 
   <section class="certs">
-    <div class="container">
-      <h3 class="section-title" style="color:#fff">График Работы</h3>
-      <div class="list" style="margin-top:18px">
-<table class="schedule">
-  <tr><td>ПН</td><td>10:00 - 22:00</td></tr>
-  <tr><td>ВТ</td><td>10:00 - 22:00</td></tr>
-  <tr><td>СР</td><td>10:00 - 22:00</td></tr>
-  <tr><td>ЧТ</td><td>10:00 - 22:00</td></tr>
-  <tr><td>ПТ</td><td>10:00 - 22:00</td></tr>
-  <tr><td>СБ</td><td>10:00 - 22:00</td></tr>
-  <tr><td>ВС</td><td>Выходной</td></tr>
-</table>
-
-<style>
-  h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  .schedule {
-    border-collapse: collapse;
-    width: 260px;
-    font-family: Arial, sans-serif;
-  }
-  .schedule td {
-    border: 1px solid #e0e0e0;
-    padding: 10px 16px;
-    font-size: 16px;
-  }
-  .schedule tr:nth-child(even) {
-    background: #fafafa;
-  }
-  .schedule tr:last-child td:last-child {
-    color: #d00;
-    font-weight: 600;
-  }
-</style>
+    <div class="container schedule-block">
+      <div class="schedule-icon">🕒</div>
+      <h3 class="section-title" style="color:#fff;margin-bottom:14px;">График работы</h3>
+      <table class="schedule">
+        <tr><td>ПН</td><td>10:00 - 22:00</td></tr>
+        <tr><td>ВТ</td><td>10:00 - 22:00</td></tr>
+        <tr><td>СР</td><td>10:00 - 22:00</td></tr>
+        <tr><td>ЧТ</td><td>10:00 - 22:00</td></tr>
+        <tr><td>ПТ</td><td>10:00 - 22:00</td></tr>
+        <tr><td>СБ</td><td>10:00 - 22:00</td></tr>
+        <tr><td>ВС</td><td>Выходной</td></tr>
+      </table>
+    </div>
+  </section>
 
   <section id="contacts" class="contact">
     <div class="container">
       <h3 class="section-title">Бесплатная консультация</h3>
-      <p style="color:#666;max-width:760px">Заполните форму ниже, если вам нужна консультация нашего специалиста по ТО.</p>
+      <p style="color:#666;max-width:760px">Заполните форму ниже, если вам нужна консультация специалиста по ТО.</p>
       <form class="form" onsubmit="event.preventDefault();alert('Заявка отправлена — пример');">
         <input class="field" placeholder="Ваше имя" required>
         <input class="field" placeholder="Телефон" required>
@@ -249,11 +219,11 @@
     <div class="container footer-grid">
       <div>
         <h4 style="margin:0 0 8px">Контакты</h4>
-        <p style="margin:0">+7 888 888-88-88<br>info@constructum.ru<br>г. Курск Ул. Клыкова 20б </p>
+        <p style="margin:0">+7 888 888-88-88<br>info@constructum.ru<br>г. Курск, ул. Клыкова 20Б</p>
       </div>
       <div style="flex:1">
         <h4 style="margin:0 0 8px">Карта</h4>
-        <div style="background:#fff;border-radius:8px;height:160px;overflow:hidden;"> <!-- placeholder map -->
+        <div style="background:#fff;border-radius:8px;height:160px;overflow:hidden;">
           <img src="https://via.placeholder.com/640x160?text=Map" style="width:100%;height:100%;object-fit:cover">
         </div>
       </div>
