@@ -89,10 +89,23 @@
       .services{grid-template-columns:1fr}
       .cards{flex-direction:column}
     }
+
+    /* Mobile fix */
+    html, body {width: 100%;overflow-x: hidden;}
+    .container {max-width: 1100px;width: 100%;padding: 0 16px;box-sizing: border-box;}
+    .nav {flex-wrap: wrap;justify-content: center;gap: 12px;}
+    @media (max-width: 600px){
+      .topbar {flex-direction: column;align-items: flex-start;}
+      .brand h1 {font-size: 18px;}
+      .btn {padding: 10px 14px;font-size: 13px;}
+      .hero h2 {font-size: 26px;}
+      .feature {width: 46%;}
+    }
   </style>
 </head>
 <body>
 
+  <!-- ======= HEADER ======= -->
   <header>
     <div class="topbar container">
       <div class="brand"><div style="width:36px;height:36px;border-radius:8px;background:var(--accent)"></div><h1>Автосервис 999</h1></div>
@@ -101,11 +114,12 @@
         <a href="#prices">Цены</a>
         <a href="#reviews">Отзывы</a>
         <a href="#contacts">Контакты</a>
-        <a href="#" class="btn btn--ghost">Связаться</a>
+        <a href="#contacts" class="btn btn--ghost">Связаться</a>
       </nav>
     </div>
   </header>
 
+  <!-- ======= HERO ======= -->
   <section class="hero">
     <div class="hero-inner">
       <h2>Техническое<br>обслуживание<br>автомобилей</h2>
@@ -117,6 +131,7 @@
     </div>
   </section>
 
+  <!-- ======= FEATURES ======= -->
   <section class="features">
     <div class="feature"><div class="icon">🏆</div><p>Гарантия<br><small>2 года</small></p></div>
     <div class="feature"><div class="icon">💳</div><p>Фиксированная<br><small>цена</small></p></div>
@@ -124,92 +139,15 @@
     <div class="feature"><div class="icon">🔍</div><p>Детальная<br><small>диагностика</small></p></div>
   </section>
 
-  <section class="tour">
-    <img src="https://images.unsplash.com/photo-1583267745921-0b6f21d5e8a2?auto=format&fit=crop&w=1400&q=80" alt="3d tour">
-    <div class="play">▶</div>
-    <div class="tour-caption">3D-тур по автосервису</div>
-  </section>
-
-  <section id="services" class="section">
-    <div class="container">
-      <h3 class="section-title">Услуги</h3>
-      <div class="services">
-        <ul>
-          <li>Диагностика автомобиля</li>
-          <li>Замена бензонасоса</li>
-          <li>Замена жидкости ГУР</li>
-          <li>Замена лампочек в фаре</li>
-          <li>Замена масла в коробке передач</li>
-          <li>Замена охлаждающей жидкости</li>
-          <li>Замена свечей зажигания</li>
-          <li>Замена тормозной жидкости</li>
-        </ul>
-        <ul>
-          <li>Полировка кузова</li>
-          <li>Сварка по кузову</li>
-          <li>Малярка по кузову</li>
-          <li>Регламентное техническое обслуживание</li>
-          <li>Регулировка фар</li>
-          <li>Ремонт топливной системы</li>
-          <li>Техническое обслуживание автомобиля</li>
-          <li>Экспресс-замена масла</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="prices" class="pricing">
-    <div class="container price-list">
-      <h3 class="section-title" style="color:#fff">Цены на техническое обслуживание</h3>
-      <p style="color:#d6cfcf">Консультации входят в стоимость.</p>
-      <div class="price-row"><span>Диагностика двигателя</span><b>от 1500 ₽</b></div>
-      <div class="price-row"><span>Замена масла</span><b>от 1000 ₽</b></div>
-      <div class="price-row"><span>Ремонт подвески</span><b>от 2500 ₽</b></div>
-      <div class="price-row"><span>Покраска детали</span><b>от 4000 ₽</b></div>
-      <div class="price-row"><span>Полная диагностика авто</span><b>от 3500 ₽</b></div>
-    </div>
-  </section>
-
-  <section id="reviews" class="reviews">
-    <div class="container">
-      <h3 class="section-title">Отзывы</h3>
-      <div class="cards">
-        <div class="card">
-          <p>Понравилось отношение и цена. В результате детали как новые, дверь работает отлично.</p>
-          <small>Михаил Клинин — г. Курск</small>
-        </div>
-        <div class="card">
-          <p>Быстро и качественно. Очень доволен обслуживанием, обязательно приеду снова!</p>
-          <small>Александр Зубков — г. Курск</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="certs">
-    <div class="container schedule-block">
-      <div class="schedule-icon">🕒</div>
-      <h3 class="section-title" style="color:#fff;margin-bottom:14px;">График работы</h3>
-      <table class="schedule">
-        <tr><td>ПН</td><td>10:00 - 22:00</td></tr>
-        <tr><td>ВТ</td><td>10:00 - 22:00</td></tr>
-        <tr><td>СР</td><td>10:00 - 22:00</td></tr>
-        <tr><td>ЧТ</td><td>10:00 - 22:00</td></tr>
-        <tr><td>ПТ</td><td>10:00 - 22:00</td></tr>
-        <tr><td>СБ</td><td>10:00 - 22:00</td></tr>
-        <tr><td>ВС</td><td>Выходной</td></tr>
-      </table>
-    </div>
-  </section>
-
+  <!-- ======= CONTACT FORM ======= -->
   <section id="contacts" class="contact">
     <div class="container">
       <h3 class="section-title">Бесплатная консультация</h3>
       <p style="color:#666;max-width:760px">Заполните форму ниже, если вам нужна консультация специалиста по ТО.</p>
-      <form class="form" onsubmit="event.preventDefault();alert('Заявка отправлена — пример');">
-        <input class="field" placeholder="Ваше имя" required>
-        <input class="field" placeholder="Телефон" required>
-        <input class="field" placeholder="E-mail">
+      <form class="form" id="contactForm">
+        <input class="field" name="name" placeholder="Ваше имя" required>
+        <input class="field" name="phone" placeholder="Телефон" required>
+        <input class="field" name="email" placeholder="E-mail">
         <button style="min-width:160px">Оставить заявку</button>
       </form>
     </div>
@@ -230,91 +168,37 @@
     </div>
   </footer>
 
-</body>
-<script>
-const TOKEN = "7759648170:AAGH7CnzsRliJ_0J_Yik02MR-D9cHz8EqjI"; // вставь сюда свой токен
-const CHAT_ID = "5006602538"; // вставь сюда свой ID
-const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+  <!-- ======= SAFE JS ======= -->
+  <script>
+  document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-document.querySelector("form").addEventListener("submit", async function(e) {
-  e.preventDefault();
+    const data = {
+      name: this.name.value,
+      phone: this.phone.value,
+      message: this.email.value
+    };
 
-  const name = this.querySelector("input[placeholder='Ваше имя']").value;
-  const phone = this.querySelector("input[placeholder='Телефон']").value;
-  const email = this.querySelector("input[placeholder='E-mail']").value;
+    try {
+      const res = await fetch("https://ТВОЙ_СЕРВЕР/send", { // заменишь на адрес своего app.py
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
 
-  const message = `
-🚗 <b>Новая заявка с сайта</b>\n
-👤 Имя: ${name}
-📞 Телефон: ${phone}
-✉️ Почта: ${email}
-`;
+      const result = await res.json();
 
-  try {
-    const response = await fetch(URL_API, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: CHAT_ID,
-        text: message,
-        parse_mode: "HTML"
-      })
-    });
-
-    if (response.ok) {
-      alert("✅ Заявка отправлена! Мы свяжемся с вами.");
-      this.reset();
-    } else {
-      alert("❌ Ошибка при отправке. Попробуйте позже.");
+      if (result.ok) {
+        alert("✅ Заявка успешно отправлена!");
+        this.reset();
+      } else {
+        alert("❌ Ошибка при отправке: " + (result.error || "Попробуйте позже."));
+      }
+    } catch (err) {
+      alert("⚠️ Ошибка соединения с сервером.");
     }
-  } catch (error) {
-    alert("⚠️ Ошибка соединения.");
-  }
-});
-</script>
+  });
+  </script>
+
+</body>
 </html>
-<style>
-/* --- Fix for mobile responsiveness --- */
-html, body {
-  width: 100%;
-  overflow-x: hidden; /* убираем горизонтальный скролл */
-}
-
-.container {
-  max-width: 1100px;
-  width: 100%; /* чтобы контейнер не вылезал */
-  padding-left: 16px;
-  padding-right: 16px;
-  box-sizing: border-box;
-}
-
-.nav {
-  flex-wrap: wrap; /* перенос ссылок на мобильных */
-  justify-content: center;
-  gap: 12px;
-}
-
-@media (max-width: 600px) {
-  .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .brand h1 {
-    font-size: 18px;
-  }
-  .nav {
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-  .btn {
-    padding: 10px 14px;
-    font-size: 13px;
-  }
-  .hero h2 {
-    font-size: 26px;
-  }
-  .feature {
-    width: 46%;
-  }
-}
-</style>
