@@ -1,0 +1,40 @@
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Правки для телефонов */
+@media (max-width: 768px) {
+  header {
+    border-radius: 0;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-left, .hero-right {
+    width: 100%;
+    max-width: 100%;
+  }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Правки для сетки */
+@media (min-width: 900px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 18px;
+  }
+}
+@media (max-width: 899px) {
+  .grid {
+    display: block;
+  }
+}
