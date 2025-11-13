@@ -130,11 +130,11 @@
           <h3 style="margin:0 0 10px">Контактная информация</h3>
           <div class="meta">
             <div><strong>Адрес</strong><small id="address">г. Курск, ул. Клыкова, 20Б</small></div>
-            <div><strong>Телефон</strong><small><a href="tel:+7XXXXXXXXXX">твой номер</a></small></div>
+            <div><strong>Телефон</strong><small><a href="tel:+79204020458">+7 920 402 0458</a></small></div>
             <div><strong>Email</strong><small><a href="mailto:твояпочта@mail.ru">твояпочта@mail.ru</a></small></div>
           </div>
           <div style="margin-top:12px" class="contacts">
-            <a href="tel:+7XXXXXXXXXX">Позвонить</a>
+            <a href="tel:+79204020458">Позвонить</a>
             <a href="mailto:твояпочта@mail.ru">Написать</a>
           </div>
         </div>
@@ -142,7 +142,13 @@
         <div class="card schedule" id="schedule">
           <h3 style="margin:0 0 10px">График работы</h3>
           <table>
-            <tr><td>Пн — Сб</td><td style="text-align:right">10:00 — 20:00</td></tr>
+            <tr><td>Пн</td><td style="text-align:right">10:00 — 22:00</td></tr>
+<tr><td>Вт</td><td style="text-align:right">10:00 — 22:00</td></tr>
+<tr><td>Ср</td><td style="text-align:right">10:00 — 22:00</td></tr>
+<tr><td>Чт</td><td style="text-align:right">10:00 — 22:00</td></tr>
+<tr><td>Пт</td><td style="text-align:right">10:00 — 22:00</td></tr>
+<tr><td>Сб</td><td style="text-align:right">10:00 — 22:00</td></tr>
+
             <tr><td>Воскресенье</td><td style="text-align:right">Выходной</td></tr>
           </table>
         </div>
@@ -154,21 +160,6 @@
         </div>
       </aside>
     </div>
-
-    <section style="margin-top:18px" class="card">
-      <h3 style="margin:0 0 10px">Форма обратной связи</h3>
-      <form onsubmit="event.preventDefault(); alert('Спасибо! Мы свяжемся с вами.');">
-        <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <input placeholder="Имя" style="flex:1;min-width:160px;padding:10px;border-radius:10px;border:1px solid #eef2ff">
-          <input placeholder="Телефон или email" style="flex:1;min-width:160px;padding:10px;border-radius:10px;border:1px solid #eef2ff">
-        </div>
-        <textarea placeholder="Сообщение" style="width:100%;margin-top:8px;padding:10px;border-radius:10px;border:1px solid #eef2ff;min-height:90px"></textarea>
-        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
-          <button class="btn" style="background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white">Отправить</button>
-          <button type="button" class="btn btn-ghost" onclick="window.location='mailto:твояпочта@mail.ru'">Написать на почту</button>
-        </div>
-      </form>
-    </section>
 
     <footer>© <span id="year"></span> Автосервис 999 — Все права защищены</footer>
   </main>
