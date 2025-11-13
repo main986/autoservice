@@ -2,203 +2,180 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Автосервис 999 — Техническое обслуживание автомобилей</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Автосервис 999 — Курск</title>
+  <meta name="description" content="Профессиональный автосервис в Курске: диагностика, ремонт, ТО, кузовные работы." />
   <style>
-    :root{--accent:#f5c84a;--bg:#3a3338;--muted:#666}
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --accent1:#4f46e5;
+      --accent2:#06b6d4;
+      --muted:#6b7280;
+      --radius:16px;
+      --glass:rgba(255,255,255,0.65);
+      --shadow:0 10px 30px rgba(15,23,42,0.08);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
     *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;color:#222;background:#fff}
-    a{color:inherit;text-decoration:none}
-
-    /* Header */
-    .topbar{background:#2b2729;color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand h1{font-size:20px;margin:0;font-weight:700}
-    .nav{display:flex;gap:18px;align-items:center}
-    .nav a{color:#ddd;text-decoration:none;font-size:14px}
-    .btn{display:inline-block;padding:12px 18px;border-radius:6px;text-decoration:none;font-weight:600}
-    .btn--primary{background:var(--accent);color:#222;margin-right:10px}
-    .btn--ghost{background:rgba(255,255,255,0.12);color:#fff}
-
-    /* Hero */
-    .hero{position:relative;background:#000 url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80') center/cover;height:520px;display:flex;align-items:center;justify-content:center}
-    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.7))}
-    .hero-inner{position:relative;z-index:2;text-align:center;color:#fff;padding:0 20px}
-    .hero h2{font-size:40px;line-height:1.05;margin:0 0 12px;font-weight:800}
-    .hero p{max-width:760px;margin:0 auto 20px;color:#e8e8e8}
-
-    /* Features strip */
-    .features{background:var(--bg);padding:28px 16px;display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
-    .feature{width:200px;text-align:center;color:#fff}
-    .feature .icon{width:56px;height:56px;border-radius:50%;background:#fff1;padding:8px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center}
-    .feature p{margin:6px 0 0;font-weight:600;font-size:15px}
-    .feature small{display:block;color:#bfb3b6;margin-top:6px;font-weight:400}
-
-    /* 3D tour */
-    .tour{position:relative;height:380px;overflow:hidden}
-    .tour img{width:100%;height:100%;object-fit:cover}
-    .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,0.95);display:flex;align-items:center;justify-content:center;font-weight:700}
-    .tour-caption{position:absolute;left:24px;bottom:24px;color:#fff;font-weight:700;font-size:22px}
-
-    /* Sections */
-    .section{padding:48px 16px}
-    .container{max-width:1100px;margin:0 auto}
-    h3.section-title{font-size:28px;margin:0 0 18px}
-
-    /* Services */
-    .services{display:grid;grid-template-columns:1fr 1fr;gap:14px;color:#444}
-    .services ul{margin:0;padding-left:18px}
-
-    /* Pricing */
-    .pricing{background:var(--bg);color:#fff;padding:48px 16px}
-    .price-list{max-width:760px;margin:0 auto}
-    .price-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
-    .price-row b{color:var(--accent)}
-
-    /* Reviews */
-    .reviews{padding:40px 16px}
-    .cards{display:flex;gap:18px;flex-wrap:wrap}
-    .card{background:#fff;border-radius:10px;padding:20px;box-shadow:0 8px 20px rgba(16,16,16,0.06);flex:1;min-width:260px}
-    .card p{margin:0 0 12px}
-    .card small{color:#777}
-
-    /* Schedule */
-    .certs{background:var(--bg);padding:36px 16px;color:#fff;text-align:center}
-    .schedule-block{display:flex;flex-direction:column;align-items:center}
-    .schedule-icon{font-size:30px;margin-bottom:10px}
-    .schedule{border-collapse:collapse;width:260px;font-family:Arial,sans-serif;background:#fff;color:#000;border-radius:6px;overflow:hidden}
-    .schedule td{border:1px solid #e0e0e0;padding:10px 16px;font-size:16px}
-    .schedule tr:nth-child(even){background:#fafafa}
-    .schedule tr:last-child td:last-child{color:#d00;font-weight:600}
-
-    /* Contact form */
-    .contact{padding:42px 16px;background:#fff}
-    .contact .form{max-width:920px;margin:0 auto;display:flex;gap:12px;flex-wrap:wrap}
-    .field{flex:1;min-width:160px}
-    input,button{padding:12px;border-radius:6px;border:1px solid #ddd;font-size:14px}
-    button{background:var(--accent);border:none;font-weight:700;cursor:pointer}
-
-    /* Footer */
-    footer{background:#1f1b1d;color:#fff;padding:32px 16px}
-    .footer-grid{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
-
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#eef2ff 100%);color:#0f172a;-webkit-font-smoothing:antialiased}
+    header{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;padding:28px 18px;border-bottom-left-radius:28px;border-bottom-right-radius:28px}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .mark{width:56px;height:56px;border-radius:12px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav{display:flex;gap:10px}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
+    nav a:hover{background:rgba(255,255,255,0.08)}
+    .hero{display:flex;gap:20px;align-items:center;margin-top:18px;flex-wrap:wrap}
+    .hero-left{flex:1;min-width:260px}
+    h1{font-size:28px;margin:0 0 8px}
+    p.lead{margin:0 0 16px;color:rgba(255,255,255,0.95);opacity:0.95}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;border:0;font-weight:700;cursor:pointer}
+    .btn-primary{background:white;color:var(--accent1)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.12);color:white}
+    .hero-right{width:320px;max-width:45%;min-width:220px}
+    .card{background:var(--card);padding:18px;border-radius:16px;box-shadow:var(--shadow)}
+    main{margin-top:20px}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .service{background:linear-gradient(180deg,#fff,#fbfdff);padding:14px;border-radius:12px;border:1px solid rgba(15,23,42,0.02);display:flex;gap:12px;align-items:center}
+    .service svg{width:44px;height:44px;flex-shrink:0}
+    h2.section{margin:0 0 12px;font-size:18px}
+    .info{display:flex;flex-direction:column;gap:12px}
+    .meta{display:flex;flex-direction:column;gap:6px}
+    .meta div{display:flex;justify-content:space-between;align-items:center;padding:10px;background:var(--glass);border-radius:12px}
+    .meta small{color:var(--muted)}
+    .contacts a{display:inline-block;margin-right:8px;text-decoration:none;padding:8px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;font-weight:700}
+    .schedule table{width:100%;border-collapse:collapse}
+    .schedule td{padding:8px 6px;border-bottom:1px dashed #eef2ff}
+    .map iframe{width:100%;height:220px;border:0;border-radius:12px}
+    footer{margin-top:30px;padding:22px 0;text-align:center;color:var(--muted)}
+    .btn-fab{position:fixed;right:18px;bottom:18px;border-radius:999px;padding:14px 16px;box-shadow:0 8px 26px rgba(2,6,23,0.18);background:linear-gradient(90deg,var(--accent2),var(--accent1));color:white;border:0;font-weight:800;z-index:40}
     @media (max-width:900px){
-      .hero{height:460px}
-      .hero h2{font-size:32px}
-      .services{grid-template-columns:1fr}
-      .cards{flex-direction:column}
+      .grid{grid-template-columns:1fr}
+      .hero-right{max-width:100%;width:100%}
     }
-
-    /* Mobile fix */
-    html, body {width: 100%;overflow-x: hidden;}
-    .container {max-width: 1100px;width: 100%;padding: 0 16px;box-sizing: border-box;}
-    .nav {flex-wrap: wrap;justify-content: center;gap: 12px;}
-    @media (max-width: 600px){
-      .topbar {flex-direction: column;align-items: flex-start;}
-      .brand h1 {font-size: 18px;}
-      .btn {padding: 10px 14px;font-size: 13px;}
-      .hero h2 {font-size: 26px;}
-      .feature {width: 46%;}
-    }
+    .pulse{animation:pulse 3s infinite}
+    @keyframes pulse{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
   </style>
 </head>
 <body>
-
-  <!-- ======= HEADER ======= -->
   <header>
-    <div class="topbar container">
-      <div class="brand"><div style="width:36px;height:36px;border-radius:8px;background:var(--accent)"></div><h1>Автосервис 999</h1></div>
-      <nav class="nav">
-        <a href="#services">Услуги</a>
-        <a href="#prices">Цены</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#contacts">Контакты</a>
-        <a href="#contacts" class="btn btn--ghost">Связаться</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ======= HERO ======= -->
-  <section class="hero">
-    <div class="hero-inner">
-      <h2>Техническое<br>обслуживание<br>автомобилей</h2>
-      <p>Проверим работоспособность всех технических узлов и агрегатов вашего автомобиля.</p>
-      <div>
-        <a class="btn btn--primary" href="#contacts">Связаться с нами</a>
-        <a class="btn btn--ghost" href="#portfolio">Посмотреть портфолио</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= FEATURES ======= -->
-  <section class="features">
-    <div class="feature"><div class="icon">🏆</div><p>Гарантия<br><small>2 года</small></p></div>
-    <div class="feature"><div class="icon">💳</div><p>Фиксированная<br><small>цена</small></p></div>
-    <div class="feature"><div class="icon">⏱️</div><p>Закончим точно<br><small>в срок</small></p></div>
-    <div class="feature"><div class="icon">🔍</div><p>Детальная<br><small>диагностика</small></p></div>
-  </section>
-
-  <!-- ======= CONTACT FORM ======= -->
-  <section id="contacts" class="contact">
     <div class="container">
-      <h3 class="section-title">Бесплатная консультация</h3>
-      <p style="color:#666;max-width:760px">Заполните форму ниже, если вам нужна консультация специалиста по ТО.</p>
-      <form class="form" id="contactForm">
-        <input class="field" name="name" placeholder="Ваше имя" required>
-        <input class="field" name="phone" placeholder="Телефон" required>
-        <input class="field" name="email" placeholder="E-mail">
-        <button style="min-width:160px">Оставить заявку</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <h4 style="margin:0 0 8px">Контакты</h4>
-        <p style="margin:0">+7 888 888-88-88<br>info@constructum.ru<br>г. Курск, ул. Клыкова 20Б</p>
+      <div class="top">
+        <div class="logo">
+          <div class="mark">AS</div>
+          <div>
+            <div style="font-weight:800">Автосервис 999</div>
+            <div style="font-size:12px;opacity:0.9">Качественно. Быстро. Надёжно.</div>
+          </div>
+        </div>
+        <nav>
+          <a href="#services">Услуги</a>
+          <a href="#schedule">График</a>
+          <a href="#map">Карта</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
       </div>
-      <div style="flex:1">
-        <h4 style="margin:0 0 8px">Карта</h4>
-        <div style="background:#fff;border-radius:8px;height:160px;overflow:hidden;">
-          <img src="https://via.placeholder.com/640x160?text=Map" style="width:100%;height:100%;object-fit:cover">
+
+      <div class="hero">
+        <div class="hero-left">
+          <h1>Профессиональный автосервис — всё для вашего автомобиля</h1>
+          <p class="lead">Диагностика, ремонт двигателя, техобслуживание, кузов и доп. услуги. Опытные мастера, честные цены и гарантия на работы.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Наши услуги</button>
+            <button class="btn btn-ghost" onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})">Связаться с нами</button>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="card">
+            <strong>Быстрая заявка</strong>
+            <p style="margin:8px 0 12px;color:var(--muted)">Оставьте телефон и мы перезвоним в течение часа.</p>
+            <form onsubmit="event.preventDefault(); alert('Заявка отправлена — замените alert на реальный обработчик');">
+              <input required placeholder="Ваше имя" style="width:100%;padding:10px;border-radius:10px;border:1px solid #eef2ff;margin-bottom:8px">
+              <input required placeholder="Телефон или email" style="width:100%;padding:10px;border-radius:10px;border:1px solid #eef2ff;margin-bottom:8px">
+              <button class="btn" type="submit" style="width:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;border-radius:12px">Оставить заявку</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </footer>
+  </header>
 
-  <!-- ======= SAFE JS ======= -->
+  <main class="container">
+    <div class="grid">
+      <section>
+        <h2 class="section">Чем занимаемся</h2>
+        <div class="services" id="services">
+          <div class="service"><div style="font-weight:700">Диагностика</div><div style="font-size:13px;color:var(--muted)">Компьютерная, перед покупкой</div></div>
+          <div class="service"><div style="font-weight:700">Ремонт двигателя</div><div style="font-size:13px;color:var(--muted)">Капитальный ремонт, замена ГРМ</div></div>
+          <div class="service"><div style="font-weight:700">Техническое обслуживание</div><div style="font-size:13px;color:var(--muted)">Замена масел, фильтров, развал-схождение</div></div>
+          <div class="service"><div style="font-weight:700">Кузовной ремонт</div><div style="font-size:13px;color:var(--muted)">Покраска, удаление вмятин, полировка</div></div>
+        </div>
+
+        <div style="margin-top:18px" class="card">
+          <h3 style="margin:0 0 8px">Преимущества</h3>
+          <ul style="margin:0;padding-left:18px;color:var(--muted)">
+            <li>Опытные мастера — 10+ лет</li>
+            <li>Честные цены и прозрачные сметы</li>
+            <li>Быстрый сервис и гарантия качества</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="info" id="contacts">
+        <div class="card">
+          <h3 style="margin:0 0 10px">Контактная информация</h3>
+          <div class="meta">
+            <div><strong>Адрес</strong><small id="address">г. Курск, ул. Клыкова, 20Б</small></div>
+            <div><strong>Телефон</strong><small><a href="tel:+7XXXXXXXXXX">твой номер</a></small></div>
+            <div><strong>Email</strong><small><a href="mailto:твояпочта@mail.ru">твояпочта@mail.ru</a></small></div>
+          </div>
+          <div style="margin-top:12px" class="contacts">
+            <a href="tel:+7XXXXXXXXXX">Позвонить</a>
+            <a href="mailto:твояпочта@mail.ru">Написать</a>
+          </div>
+        </div>
+
+        <div class="card schedule" id="schedule">
+          <h3 style="margin:0 0 10px">График работы</h3>
+          <table>
+            <tr><td>Пн — Сб</td><td style="text-align:right">10:00 — 20:00</td></tr>
+            <tr><td>Воскресенье</td><td style="text-align:right">Выходной</td></tr>
+          </table>
+        </div>
+
+        <div class="card map" id="map">
+          <h3 style="margin:0 0 10px">Где мы</h3>
+          <iframe src="https://www.google.com/maps?q=г.+Курск,+ул.+Клыкова,+20Б&output=embed" loading="lazy"></iframe>
+          <div style="margin-top:8px;font-size:13px;color:var(--muted)">Адрес: <strong>г. Курск, ул. Клыкова, 20Б</strong></div>
+        </div>
+      </aside>
+    </div>
+
+    <section style="margin-top:18px" class="card">
+      <h3 style="margin:0 0 10px">Форма обратной связи</h3>
+      <form onsubmit="event.preventDefault(); alert('Спасибо! Мы свяжемся с вами.');">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <input placeholder="Имя" style="flex:1;min-width:160px;padding:10px;border-radius:10px;border:1px solid #eef2ff">
+          <input placeholder="Телефон или email" style="flex:1;min-width:160px;padding:10px;border-radius:10px;border:1px solid #eef2ff">
+        </div>
+        <textarea placeholder="Сообщение" style="width:100%;margin-top:8px;padding:10px;border-radius:10px;border:1px solid #eef2ff;min-height:90px"></textarea>
+        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn" style="background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white">Отправить</button>
+          <button type="button" class="btn btn-ghost" onclick="window.location='mailto:твояпочта@mail.ru'">Написать на почту</button>
+        </div>
+      </form>
+    </section>
+
+    <footer>© <span id="year"></span> Автосервис 999 — Все права защищены</footer>
+  </main>
+
+  <button class="btn-fab pulse" onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})">Записаться</button>
+
   <script>
-  document.getElementById("contactForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
-
-    const data = {
-      name: this.name.value,
-      phone: this.phone.value,
-      message: this.email.value
-    };
-
-    try {
-      const res = await fetch("https://ТВОЙ_СЕРВЕР/send", { // заменишь на адрес своего app.py
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
-
-      const result = await res.json();
-
-      if (result.ok) {
-        alert("✅ Заявка успешно отправлена!");
-        this.reset();
-      } else {
-        alert("❌ Ошибка при отправке: " + (result.error || "Попробуйте позже."));
-      }
-    } catch (err) {
-      alert("⚠️ Ошибка соединения с сервером.");
-    }
-  });
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
