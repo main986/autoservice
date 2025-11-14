@@ -23,6 +23,9 @@ html, body {
     flex-wrap: wrap;
     justify-content: center;
   }
+  nav a {
+  white-space: nowrap;
+  }
 }
 
 /* Правки для сетки */
