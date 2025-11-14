@@ -58,3 +58,24 @@ nav {
 nav a {
   white-space: nowrap; /* ❗ текст в кнопках не переносится */
 }
+/* Компактное меню на телефоне */
+@media (max-width: 480px) {
+  nav a {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .logo .mark {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .logo div div:first-child {
+    font-size: 14px;
+  }
+
+  .logo div div:last-child {
+    font-size: 10px;
+  }
+}
