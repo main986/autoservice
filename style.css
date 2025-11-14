@@ -41,3 +41,20 @@ html, body {
     display: block;
   }
 }
+/* ===== Горизонтальное меню ВСЕГДА ===== */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; /* ❗ запрещаем перенос логотипа и меню */
+}
+
+nav {
+  display: flex;
+  flex-wrap: nowrap; /* ❗ кнопки не переходят на вторую строку */
+  gap: 10px;
+}
+
+nav a {
+  white-space: nowrap; /* ❗ текст в кнопках не переносится */
+}
