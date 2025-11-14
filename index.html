@@ -95,10 +95,10 @@
           <div class="card">
             <strong>Быстрая заявка</strong>
             <p style="margin:8px 0 12px;color:var(--muted)">Оставьте телефон и мы перезвоним в течение часа.</p>
-            <form onsubmit="event.preventDefault(); alert('Заявка отправлена — замените alert на реальный обработчик');">
-              <input required placeholder="Ваше имя" style="width:100%;padding:10px;border-radius:10px;border:1px solid #eef2ff;margin-bottom:8px">
-              <input required placeholder="Телефон или email" style="width:100%;padding:10px;border-radius:10px;border:1px solid #eef2ff;margin-bottom:8px">
-              <button class="btn" type="submit" style="width:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;border-radius:12px">Оставить заявку</button>
+            <form id="contactForm">
+  <input required placeholder="Ваше имя" style="width:100%;padding:10px;border-radius:10px;border:1px solid #eef2ff;margin-bottom:8px">
+  <input required placeholder="Телефон или email" style="width:100%;padding:10px;border-radius:10px;border:1px solid #eef2ff;margin-bottom:8px">
+  <button class="btn" type="submit" style="width:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;border-radius:12px">Оставить заявку</button>
             </form>
           </div>
         </div>
