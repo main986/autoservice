@@ -6,61 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Автосервис 999 — Курск</title>
-  <meta name="description" content="Профессиональный автосервис в Курске: диагностика, ремонт, ТО, кузовные работы." />
-  <style>
-    :root{
-      --bg:#f6f8fb;
-      --card:#ffffff;
-      --accent1:#4f46e5;
-      --accent2:#06b6d4;
-      --muted:#6b7280;
-      --radius:16px;
-      --glass:rgba(255,255,255,0.65);
-      --shadow:0 10px 30px rgba(15,23,42,0.08);
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,var(--bg),#eef2ff 100%);color:#0f172a;-webkit-font-smoothing:antialiased}
-    header{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;padding:28px 18px;border-bottom-left-radius:28px;border-bottom-right-radius:28px}
-    .container{max-width:1100px;margin:0 auto;padding:20px}
-    .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .logo{display:flex;gap:12px;align-items:center}
-    .logo .mark{width:56px;height:56px;border-radius:12px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-weight:700}
-    nav{display:flex;gap:10px}
-    nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
-    nav a:hover{background:rgba(255,255,255,0.08)}
-    .hero{display:flex;gap:20px;align-items:center;margin-top:18px;flex-wrap:wrap}
-    .hero-left{flex:1;min-width:260px}
-    h1{font-size:28px;margin:0 0 8px}
-    p.lead{margin:0 0 16px;color:rgba(255,255,255,0.95);opacity:0.95}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;border:0;font-weight:700;cursor:pointer}
-    .btn-primary{background:white;color:var(--accent1)}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.12);color:white}
-    .hero-right{width:320px;max-width:45%;min-width:220px}
-    .card{background:var(--card);padding:18px;border-radius:16px;box-shadow:var(--shadow)}
-    main{margin-top:20px}
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
-    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    .service{background:linear-gradient(180deg,#fff,#fbfdff);padding:14px;border-radius:12px;border:1px solid rgba(15,23,42,0.02);display:flex;gap:12px;align-items:center}
-    .service svg{width:44px;height:44px;flex-shrink:0}
-    h2.section{margin:0 0 12px;font-size:18px}
-    .info{display:flex;flex-direction:column;gap:12px}
-    .meta{display:flex;flex-direction:column;gap:6px}
-    .meta div{display:flex;justify-content:space-between;align-items:center;padding:10px;background:var(--glass);border-radius:12px}
-    .meta small{color:var(--muted)}
-    .contacts a{display:inline-block;margin-right:8px;text-decoration:none;padding:8px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;font-weight:700}
-    .schedule table{width:100%;border-collapse:collapse}
-    .schedule td{padding:8px 6px;border-bottom:1px dashed #eef2ff}
-    .map iframe{width:100%;height:220px;border:0;border-radius:12px}
-    footer{margin-top:30px;padding:22px 0;text-align:center;color:var(--muted)}
-    .btn-fab{position:fixed;right:18px;bottom:18px;border-radius:999px;padding:14px 16px;box-shadow:0 8px 26px rgba(2,6,23,0.18);background:linear-gradient(90deg,var(--accent2),var(--accent1));color:white;border:0;font-weight:800;z-index:40}
-    @media (max-width:900px){
-      .grid{grid-template-columns:1fr}
-      .hero-right{max-width:100%;width:100%}
-    }
-    .pulse{animation:pulse 3s infinite}
-    @keyframes pulse{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
-  </style>
+  <meta name="description" content="Профессиональный автосервис в Курске: кузовные работы. Опытные мастера, честные цены и гарантия качества.">
 </head>
 <body>
 <p id="status"></p>
@@ -68,53 +14,31 @@
     <div class="container">
       <div class="top">
         <div class="logo">
-          <div class="mark">AS</div>
+          <div class="mark">999</div>
           <div>
             <div style="font-weight:800">Автосервис 999</div>
             <div style="font-size:12px;opacity:0.9">Качественно. Быстро. Надёжно.</div>
           </div>
         </div>
-        <nav>
-          <a href="#services">Услуги</a>
-          <a href="#schedule">График</a>
-          <a href="#map">Карта</a>
-          <a href="#contacts">Контакты</a>
-        </nav>
       </div>
-
       <div class="hero">
         <div class="hero-left">
           <h1>Профессиональный автосервис — всё для вашего автомобиля</h1>
-          <p class="lead">Диагностика, ремонт двигателя, техобслуживание, кузов и доп. услуги. Опытные мастера, честные цены и гарантия на работы.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
             <button class="btn btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Наши услуги</button>
             <button class="btn btn-ghost" onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})">Связаться с нами</button>
           </div>
         </div>
-        <div class="hero-right">
-          <div class="card">
-            <strong>Быстрая заявка</strong>
-            <p style="margin:8px 0 12px;color:var(--muted)">Оставьте телефон и мы перезвоним в течение часа.</p>
-            <form id="contactForm">
-  <input required placeholder="Ваше имя" style="width:100%;padding:10px;border-radius:10px;border:1px solid #eef2ff;margin-bottom:8px">
-  <input required placeholder="Телефон или email" style="width:100%;padding:10px;border-radius:10px;border:1px solid #eef2ff;margin-bottom:8px">
-  <button class="btn" type="submit" style="width:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;border-radius:12px">Оставить заявку</button>
-            </form>
-          </div>
-        </div>
       </div>
     </div>
   </header>
-
   <main class="container">
     <div class="grid">
       <section>
         <h2 class="section">Чем занимаемся</h2>
         <div class="services" id="services">
-          <div class="service"><div style="font-weight:700">Диагностика</div><div style="font-size:13px;color:var(--muted)">Компьютерная, перед покупкой</div></div>
-          <div class="service"><div style="font-weight:700">Ремонт двигателя</div><div style="font-size:13px;color:var(--muted)">Капитальный ремонт, замена ГРМ</div></div>
-          <div class="service"><div style="font-weight:700">Техническое обслуживание</div><div style="font-size:13px;color:var(--muted)">Замена масел, фильтров, развал-схождение</div></div>
-          <div class="service"><div style="font-weight:700">Кузовной ремонт</div><div style="font-size:13px;color:var(--muted)">Покраска, удаление вмятин, полировка</div></div>
+          <div class="service"><div style="font-weight:700">Техническое обслуживание</div><div style="font-size:13px;color:var(--muted)">Замена масел, фильтров</div></div>
+          <div class="service"><div style="font-weight:700">Кузовной ремонт</div><div style="font-size:13px;color:var(--muted)">Покраска, удаление вмятин, полировка, сварка, ремонт бамперов, восстановление геометрии кузова</div></div>
         </div>
 
         <div style="margin-top:18px" class="card">
@@ -126,21 +50,19 @@
           </ul>
         </div>
       </section>
-
       <aside class="info" id="contacts">
         <div class="card">
           <h3 style="margin:0 0 10px">Контактная информация</h3>
           <div class="meta">
             <div><strong>Адрес</strong><small id="address">г. Курск, ул. Клыкова, 20Б</small></div>
-            <div><strong>Телефон</strong><small><a href="tel:+79204020458">+7 920 402 0458</a></small></div>
-            <div><strong>Email</strong><small><a href="mailto:твояпочта@mail.ru">твояпочта@mail.ru</a></small></div>
+            <div><strong>Телефон</strong><small><a href="tel:+79204020458">+7 920 402 04 58</a></small></div>
+            <div><strong>WhatsApp</strong></strong><small><a href="https//wa.me/89204020458">Автосервис 999</a></small></div>
           </div>
           <div style="margin-top:12px" class="contacts">
             <a href="tel:+79204020458">Позвонить</a>
             <a href="mailto:твояпочта@mail.ru">Написать</a>
           </div>
         </div>
-
         <div class="card schedule" id="schedule">
           <h3 style="margin:0 0 10px">График работы</h3>
           <table>
@@ -166,7 +88,7 @@
     <footer>© <span id="year"></span> Автосервис 999 — Все права защищены</footer>
   </main>
 
-  <button class="btn-fab pulse" onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})">Записаться</button>
+ 
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
