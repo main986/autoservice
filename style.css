@@ -1,4 +1,4 @@
-  :root{
+:root{
       --bg:#f6f8fb;
       --card:#ffffff;
       --accent1:#3100FF;
@@ -122,13 +122,6 @@
             }
         }
         
-        
-        
-
-
-
-
-
 .steps {
     text-align: center;
     padding: 25px 15px;
@@ -313,4 +306,4 @@
     grid-template-columns: 1fr;
     grid-template-areas: unset;
   }
-          }
+}
