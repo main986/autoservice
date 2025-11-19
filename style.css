@@ -10,7 +10,7 @@
       font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
     }
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,var(--bg),#eef2ff 100%);color:#0f172a;-webkit-font-smoothing:antialiased}
+    body{margin:0;padding: 0;background:linear-gradient(180deg,var(--bg),#eef2ff 100%);color:#0f172a;-webkit-font-smoothing:antialiased}
     header{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;padding:28px 18px;border-bottom-left-radius:28px;border-bottom-right-radius:28px}
     .container{max-width:1100px;margin:0 auto;padding:20px}
     .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
@@ -49,3 +49,268 @@
       .hero-right{max-width:100%;width:100%}
     }
     .pulse{animation:pulse 3s infinite}
+    
+    .logo-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 1.5s ease-in-out;
+        }
+        
+        .logo-overlay.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .logo-image {
+            max-width: 80%;
+            max-height: 70%;
+            animation: fadeInScale 1s ease-out forwards;
+        }
+        
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }.logo-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000F0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .logo-overlay.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .logo-image {
+            max-width: 80%;
+            max-height: 70%;
+            animation: fadeInScale 2s ease-out forwards;
+        }
+        
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        
+        
+
+
+
+
+
+.steps {
+    text-align: center;
+    padding: 25px 15px;
+    font-family: Arial, sans-serif;
+}
+
+.steps-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.car-image img {
+    width: 90%;
+    max-width: 350px;
+    margin-bottom: 25px;
+}
+
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step p {
+    font-size: 15px;
+    line-height: 1.35;
+    margin-top: 10px;
+    max-width: 300px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    filter: brightness(0) saturate(100%) invert(30%) sepia(94%) saturate(7470%) hue-rotate(347deg) brightness(97%) contrast(115%);
+}
+
+/* Улучшение адаптации под маленькие телефоны (iPhone SE и т.п.) */
+@media (max-width: 360px) {
+    .steps-title {
+        font-size: 22px;
+    }
+    .icon {
+        width: 42px;
+        height: 42px;
+    }
+    .step p {
+        font-size: 14px;
+    }
+}
+
+/* 📌 ФОН КАРТИНКОЙ */
+.steps {
+    background-image: url(""); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.steps {
+    padding: 40px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+
+    /* Фон всей секции */
+    background-image: url("");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+}
+
+.steps-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: #000000;
+}
+
+/* Блок каждого этапа */
+.step {
+    background: #FFFFFF; /* ЧЁРНЫЙ ПРОЗРАЧНЫЙ ФОН */
+    padding: 20px 15px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    max-width: 330px;
+    margin-left: 40px;
+    margin-right: 40px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 15px;
+    filter: brightness(0) saturate(100%) invert(30%) sepia(94%) saturate(7470%)
+            hue-rotate(347deg) brightness(97%) contrast(115%);
+}
+
+.step p {
+    font-size: 16px;
+    color: #000000; /* Текст белый */
+    line-height: 1.4;
+}
+
+
+
+.carousel {
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.35s ease;
+  padding: 0 40px;
+}
+
+.carousel-slide {
+  width: 100%;
+  border-radius: 15px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.carousel-dots div {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.carousel-dots .active {
+  background: #1A2ADD;
+}
+
+
+/* ---------- ПК: переносим контакты НАВЕРХ ---------- */
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 360px 1fr;
+    grid-template-areas:
+      "info section1"
+      "info section2";
+  }
+
+  .grid > section:first-of-type {
+    grid-area: section1;
+  }
+
+  .grid > .steps {
+    grid-area: section2;
+  }
+
+  .grid > .info {
+    grid-area: info;
+  }
+}
+
+/* ---------- Телефон: обычный порядок ---------- */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: unset;
+  }
+          }
